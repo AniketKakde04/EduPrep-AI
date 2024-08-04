@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Question Paper</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="header">
+            <div class="title-txt">
+                <h2>EduPrep AI</h2>
+            </div>
+            <div class="header-text">
+                <h1>Unleash the Power of AI</h1>
+                <h2>Perfect Question Papers in Minutes!</h2>
+                <div class="align-btn"><button class="btn"><a href="#contain">Know More</a></button></div>
+            </div>
+        </div>
+
+        <div class="container" id="contain">
+            <div class="form-container">
+                <form action="/" method="POST">
+                    <div class="options">
+                        <select id="std" name="standard" class="dropdown">
+                            <option value="X">10th</option>
+                            <option value="IX">9th</option>
+                            <option value="VIII">8th</option>
+                        </select>
+                        <select id="board-val" name="board">
+                            <option value="cbse">CBSE</option>
+                            <option value="state">State Board</option>
+                            <option value="icse">ICSE</option>
+                        </select>
+                        <select id="sub-val" name="subject">
+                            <option value="math">Math</option>
+                            <option value="science">Science</option>
+                            <option value="sst">SST</option>
+                        </select>
+                    </div>
+                    <input type="text" class="ip-field" placeholder="Enter marks" name="marks">
+                    <div>
+                        <button class="btn" type="submit">Generate Question Paper</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <% if (ans) { %>
+            <div class="generated-doc">
+                <a href="data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,<%= ans %>" download="Question_Paper.docx">Download Question Paper</a>
+            </div>
+        <% } %>
+    </div>
+</body>
+
+</html>
